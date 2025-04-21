@@ -1,20 +1,25 @@
 import 'package:flutter/material.dart';
+import 'pages/home_page.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(MoodTrackerApp());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
+class MoodTrackerApp extends StatelessWidget {
+  
+  const MoodTrackerApp({super.key});
+  
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
+    return MaterialApp(
+      title: 'Mood Tracker',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.indigo,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        useMaterial3: true,
       ),
+      home: HomePage(),
     );
   }
 }
