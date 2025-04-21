@@ -6,9 +6,9 @@ Repo for the Partil UI with automated tests assignment.
 
 ## App Screenshots
 
-![Home Screen](screenshots/home_screen.png)
-![Settings Screen](screenshots/mood_history_screen.png)
-![Profile Screen](screenshots/log_mood_screen.png)
+<img src="screenshots/home_screen.png" alt="Home Screen" width="400" />
+<img src="screenshots/mood_history_screen.png" alt="Settings Screen" width="400" />
+<img src="screenshots/log_mood_screen.png" alt="Profile Screen" width="400" />
 
 ## Tests
 
