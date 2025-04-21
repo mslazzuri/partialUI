@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
                       subtitle: Text(today.note),
                     ),
                   )
-                : Text("You haven't logged your mood today."),
+                : Center(child: Text("You haven't logged your mood today.")),
             Spacer(),
             
             ElevatedButton.icon(
