@@ -1,6 +1,6 @@
 # Partial UI
 
-Repo for the Partil UI with automated tests assignment.
+Repo for the Partial UI with automated tests assignment.
 
 ---
 
@@ -12,7 +12,7 @@ Repo for the Partil UI with automated tests assignment.
 
 ## Tests
 
-You can view a screenshot of the tests passing [here](screenshots/Tests.png).
+<img src="screenshots/Tests.png" alt="Automated Tests" width="400" />
 
 ## Running App
 
