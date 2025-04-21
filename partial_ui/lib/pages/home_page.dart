@@ -4,6 +4,9 @@ import 'log_mood_page.dart';
 import 'mood_history_page.dart';
 
 class HomePage extends StatefulWidget {
+  
+  const HomePage({super.key});
+  
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -25,18 +28,23 @@ class _HomePageState extends State<HomePage> {
         : null;
 
     return Scaffold(
-      appBar: AppBar(title: Text('Mood Tracker')),
+      
+      appBar: AppBar(title: Text('Mood Tracker'), backgroundColor: Colors.white,),
+      backgroundColor: Colors.white,
       body: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 24),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Hello 👋', style: Theme.of(context).textTheme.headlineMedium),
+            
+            Center(child: Text('Hello 👋', style: Theme.of(context).textTheme.headlineMedium)),
+            
             SizedBox(height: 16),
             today != null
                 ? Card(
                     elevation: 4,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                    color: Colors.grey[200],
                     child: ListTile(
                       title: Text("Today's Mood: ${today.mood}"),
                       subtitle: Text(today.note),
@@ -44,6 +52,7 @@ class _HomePageState extends State<HomePage> {
                   )
                 : Text("You haven't logged your mood today."),
             Spacer(),
+            
             ElevatedButton.icon(
               onPressed: () async {
                 final result = await Navigator.push(
@@ -52,11 +61,20 @@ class _HomePageState extends State<HomePage> {
                 );
                 if (result is MoodLog) _addMood(result);
               },
-              icon: Icon(Icons.add),
-              label: Text('Log Mood'),
-              style: ElevatedButton.styleFrom(minimumSize: Size(double.infinity, 50)),
+              icon: Icon(Icons.add, color: Colors.white, size: 20),
+              label: Text('Log Mood', style: TextStyle(fontSize: 16),),
+              style: ElevatedButton.styleFrom(
+                minimumSize: Size(double.infinity, 50),
+                foregroundColor: Colors.white,
+                backgroundColor: Colors.deepOrange[400]
+              ),
             ),
+            
             TextButton(
+              style: ButtonStyle(
+                foregroundColor: WidgetStateProperty.all(Colors.deepOrange),
+                overlayColor: WidgetStateProperty.all(Colors.deepOrange.withAlpha(30)),
+              ),
               onPressed: () {
                 Navigator.push(
                   context,
@@ -65,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 );
               },
-              child: Text('View Mood History'),
+              child: Center(child: Text('View Mood History', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),)),
             )
           ],
         ),

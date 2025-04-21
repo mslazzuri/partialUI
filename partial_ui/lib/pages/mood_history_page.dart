@@ -9,16 +9,19 @@ class MoodHistoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Mood History')),
+      appBar: AppBar(title: Text('Mood History'), backgroundColor: Colors.white,),
+      backgroundColor: Colors.white,
       body: moodLogs.isEmpty
           ? Center(child: Text('No mood logs yet.'))
           : ListView.builder(
-              padding: EdgeInsets.all(16),
+              padding: EdgeInsets.symmetric(horizontal: 24, vertical: 50),
               itemCount: moodLogs.length,
               itemBuilder: (context, index) {
                 final log = moodLogs[index];
                 return Card(
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                  elevation: 4,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                  color: Colors.grey[200],
                   child: ListTile(
                     leading: Text(log.mood, style: TextStyle(fontSize: 24)),
                     title: Text(log.note.isNotEmpty ? log.note : 'No note'),
